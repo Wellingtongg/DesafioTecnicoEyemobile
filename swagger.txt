@@ -1,0 +1,152 @@
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: "Desafio Técnico Backend"
+host: localhost:3333
+basePath: /
+consumes:
+- application/json
+produces:
+- application/json
+securityDefinitions:
+  BasicAuth:
+    type: basic
+security:
+  - BasicAuth: []
+paths:
+  /transactions:
+    x-summary: Transações
+    get:
+      summary: Listar extratos
+      responses:
+        200:
+          description: "Extratos listados com sucesso"
+          schema:
+            type: object
+            properties:
+              nsu:
+                type: string
+                example: "0451456"
+              valor:
+                type: number
+                example: 79.99
+              liquido:
+                type: number
+                example: 78.39
+              bandeira:
+                type: string
+                example: "MASTERCARD"
+                enum: [VISA, MASTERCARD, ELO, AMEX]
+              modalidade:
+                type: string
+                example: "debito"
+                enum: [debito, credito]
+              horario:
+                type: string
+                example: "2019-01-04T12:43:20-03:00"
+              disponivel:
+                type: string
+                example: "2019-01-07"
+          examples:
+            application/json:
+              - nsu: "0451456"
+                valor: 79.99
+                liquido: 78.39
+                bandeira: "MASTERCARD"
+                modalidade: "debito"
+                horario: "2019-01-04T12:43:20-03:00"
+                disponivel: "2019-01-07"
+        401:
+          description: "Não autorizado"
+        500:
+          description: "Erro no servidor"
+          schema: 
+            type: object
+            properties:
+              status:
+                type: string
+                example: "erro"
+              mensagem:
+                type: string
+                example: "Não foi possível listar o extrato"
+    post:
+      summary: Criar transação
+      parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+            required:
+              - nsu
+              - valor
+              - bandeira
+              - modalidade
+              - horario
+            properties:
+              nsu:
+                type: string
+                example: "0451456"
+              valor:
+                type: number
+                example: 79.99
+              bandeira:
+                type: string
+                example: "MASTERCARD"
+                enum: [VISA, MASTERCARD, ELO, AMEX]
+              modalidade:
+                type: string
+                example: "debito"
+                enum: [debito, credito]
+              horario:
+                type: string
+                example: "2019-01-04T12:43:20-03:00"
+      responses:
+        200:
+          description: "Transação criada com sucesso"
+          schema: 
+            type: boolean
+            example: true
+        401:
+          description: "Não autorizado"
+        500:
+          description: "Erro no servidor"
+          schema: 
+            type: object
+            properties:
+              status:
+                type: string
+                example: "erro"
+              mensagem:
+                type: string
+                example: "Não foi possível criar a transação"
+  /balance:
+    x-summary: Saldo
+    get:
+      summary: Listar
+      responses:
+        200:
+          description: "Saldo listado com sucesso"
+          schema: 
+            type: object
+            properties:
+              disponivel:
+                type: number
+                example: 237.80
+              receber:
+                type: number
+                example: 120.36
+          examples:
+            application/json: { "disponivel": 237.80, "receber": 120.36}
+        401:
+          description: "Não autorizado"
+        500:
+          description: "Erro no servidor"
+          schema: 
+            type: object
+            properties:
+              status:
+                type: string
+                example: "erro"
+              mensagem:
+                type: string
+                example: "Não foi possível listar o saldo"
