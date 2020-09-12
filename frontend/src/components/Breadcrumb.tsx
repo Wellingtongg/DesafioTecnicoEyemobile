@@ -19,7 +19,9 @@ const Breadcrumb: React.FC = () => {
   }, [pathname]);
 
   return (
-  <div id="breadcrumb">PetShop <span className="divider">|</span> {breadcrumb}</div>
+    <div id="breadcrumb">
+      <img src="images/ic_menu.svg" className="icon-menu" />PetShop <span className="divider">|</span> {breadcrumb}
+    </div>
   );
 }
 

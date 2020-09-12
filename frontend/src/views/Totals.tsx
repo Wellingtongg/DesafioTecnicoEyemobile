@@ -91,7 +91,7 @@ const Totals = () => {
             <span>10.178,60</span>
           </div>
         </div>
-
+        <hr className="totals" />
         <div className="container-charts">
           <div className="chart services">
             <div className="title-chart">Serviços</div>
@@ -114,7 +114,7 @@ const Totals = () => {
               options={chartBar.options}
               series={chartBar.series}
               type="bar"
-              width="380"
+              width="300"
             />
             <ul className="itens-chart">
               <li><div className="circle" style={{ backgroundColor: '#24e0b5'}} /> Receitas <div>R$ 12.890,50 (82%)</div></li>

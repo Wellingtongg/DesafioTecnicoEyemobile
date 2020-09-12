@@ -7,12 +7,12 @@ const Customers = () => {
       <Search />
       <table id="customers">
         <thead>
-          <th>id</th>
-          <th>nome</th>
-          <th>documento</th>
-          <th>data nascimento</th>
-          <th>cliente desde</th>
-          <th>última compra</th>
+          <th style={{ minWidth: '110px' }}>id</th>
+          <th style={{ minWidth: '180px' }}>nome</th>
+          <th style={{ minWidth: '140px' }}>documento</th>
+          <th style={{ minWidth: '150px' }}>data nascimento</th>
+          <th style={{ minWidth: '140px' }}>cliente desde</th>
+          <th style={{ minWidth: '150px' }}>última compra</th>
         </thead>
         <tbody>
           <tr>
