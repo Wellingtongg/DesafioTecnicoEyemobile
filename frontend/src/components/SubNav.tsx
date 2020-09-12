@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDollarSign } from "@fortawesome/free-solid-svg-icons";
 
 interface ISubNav {
   handleSubNavClick(activeSubNav: string): void;
@@ -16,7 +18,7 @@ const SubNav: React.FC<ISubNav> = ({ handleSubNavClick }) => {
             setActive('totais');
             handleSubNavClick('totais');
           }}>
-          <img src="/images/ic_totais.svg" />
+          <FontAwesomeIcon icon={faDollarSign} className="icon-dollar" />
           <span>Totais</span>
         </li>
         <li

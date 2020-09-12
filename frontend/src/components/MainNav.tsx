@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { ReactSVG } from 'react-svg';
 
-const MainNav = () => {
+const MainNav: React.FC = () => {
   return (
     <nav id="main-nav">
       <img className="logo" src="/images/ic_logo.svg" />

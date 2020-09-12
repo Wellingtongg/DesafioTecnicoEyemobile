@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from "react-router-dom";
 
-const Breadcrumb = () => {
+const Breadcrumb: React.FC = () => {
   const [breadcrumb, setBreadcrumb] = useState<string>('');
   const { pathname } = useLocation();
 
