@@ -1,7 +1,7 @@
 import React from 'react';
 import Chart from 'react-apexcharts';
 
-const Totals = () => {
+const Totals: React.FC = () => {
   const formatValue = (value: any): string => {
     return value.toLocaleString('pt-BR', {
       minimumFractionDigits: 2,

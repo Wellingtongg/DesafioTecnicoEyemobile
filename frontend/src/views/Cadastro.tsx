@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Cadastro = () => {
+const Cadastro: React.FC = () => {
   return <></>;
 }
 

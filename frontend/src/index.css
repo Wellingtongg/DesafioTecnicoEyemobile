@@ -46,6 +46,8 @@ html, body, #root {
   border: 0;
   background: none;
   font-family: Avenir Medium;
+  outline-offset: unset !important;
+  outline: unset;
 }
 
 body {

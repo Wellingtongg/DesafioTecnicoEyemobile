@@ -3,7 +3,7 @@ import SubNav from './../components/SubNav';
 import Totals from './Totals';
 import Customers from './Customers';
 
-const MeuFaturamento = () => {
+const MeuFaturamento: React.FC = () => {
   const [active, setActive] = useState('totais');
 
   const handleSubNavClick = (activeSubNav: string): void => {

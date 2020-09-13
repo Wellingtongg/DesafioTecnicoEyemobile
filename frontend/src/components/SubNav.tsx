@@ -27,7 +27,7 @@ const SubNav: React.FC<ISubNav> = ({ handleSubNavClick }) => {
             setActive('clientes');
             handleSubNavClick('clientes');
           }}>
-          <img src="/images/ic_clientes.svg" />
+          <img src="/images/ic_clientes.svg" alt="clientes" />
           <span>Clientes</span>
         </li>
       </ul>

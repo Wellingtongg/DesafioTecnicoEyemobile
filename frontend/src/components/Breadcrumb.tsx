@@ -20,7 +20,7 @@ const Breadcrumb: React.FC = () => {
 
   return (
     <div id="breadcrumb">
-      <img src="images/ic_menu.svg" className="icon-menu" />PetShop <span className="divider">|</span> {breadcrumb}
+      <img src="images/ic_menu.svg" className="icon-menu" alt="menu" />PetShop <span className="divider">|</span> {breadcrumb}
     </div>
   );
 }
