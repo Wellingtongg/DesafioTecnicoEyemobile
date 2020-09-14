@@ -32,16 +32,22 @@ const Customers:React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          {customers.map(customer => (
-            <tr key={customer.id.toString()}>
-              <td>{customer.id}</td>
-              <td>{customer.name}</td>
-              <td>{customer.document}</td>
-              <td>{customer.birthdate}</td>
-              <td>{customer.customer_since}</td>
-              <td>{customer.last_purchase}</td>
+          {customers.length > 0 ? (
+            customers.map(customer => (
+              <tr key={customer.id.toString()}>
+                <td>{customer.id}</td>
+                <td>{customer.name}</td>
+                <td>{customer.document}</td>
+                <td>{customer.birthdate}</td>
+                <td>{customer.customer_since}</td>
+                <td>{customer.last_purchase}</td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={6} className="empty">Nenhum cliente encontrado</td>
             </tr>
-          ))}
+          )}
         </tbody>
       </table>
     </>
