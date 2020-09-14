@@ -26,8 +26,8 @@ export class TransactionRepository implements ITransactionRepository {
     try {
       const balance = await knex('transactions')
         .select(knex.raw(
-          "SUM(IF(CURDATE() <= disponivel, IF(modalidade = 'credito', liquido * 1, liquido * (-1)), 0)) AS disponivel," +
-          "SUM(IF(CURDATE() > disponivel, IF(modalidade = 'credito', liquido * 1, liquido * (-1)), 0))  AS receber"
+          "SUM(IF(CURDATE() >= disponivel, liquido, 0)) AS disponivel," +
+          "SUM(IF(CURDATE() < disponivel, liquido, 0))  AS receber"
         )).first();
       return JSON.parse(JSON.stringify(balance));
     } catch (err) {
